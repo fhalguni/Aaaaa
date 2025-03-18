@@ -1,0 +1,33 @@
+Task 1: Find Employees and Their Department Names Using INNER JOIN
+
+Write a query to retrieve Employee Name, Department Name, and Hire Date by joining Employees and Departments.
+
+Task 2: List Employees Without a Manager (SELF JOIN OF LEFT JOIN)
+
+Find employees who do not report to any manager.
+
+Task 3: Find Departments Without Any Employees (LEFT JOIN)
+
+Retrieve all departments and include departments without employees.
+
+Task 4: Get the Total Salary (Base + Bonus) for Each Employee (JOIN Calculation)
+
+Write a query to calculate and display the total salary for each employee.
+
+Task 5: Identify the Employee with the Highest Salary (subquery)
+
+Find the employee with the highest salary using a subquery.
+
+Task 6: Find Employees Earning More Than Their Manager (SELF JOIN) Retrieve employees who earn more than their managers using SELF JOIN.
+
+Task 7: Create a View for HR to See Employee Salary Details
+
+Create a view named EmployeeSalaryView that includes:
+
+EmployeeID, Name, DepartmentName, BaseSalary, Bonus, and Totalsalary.
+
+Task 8: Get Employees Who Have Been Working for More Than 3 Years (DATEDIFF)
+
+Retrieve employees who have been working for more than 3 years from today's date.
+
+Task 9: Find the Number of Employees in Each Department (GROUP BY) Display each department's name and the count of employees in that department.

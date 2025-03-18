@@ -1,0 +1,22 @@
+{
+  "name": "librarymanagementsystem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch \"./**/*.ts\" --exec \"ts-node\" ./src/app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mssql": "^9.1.7",
+    "@types/node": "^22.13.10",
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
+  }
+}

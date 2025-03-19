@@ -12,12 +12,10 @@ class studentRepo {
     return result.recordset;
   }
 
-  async viewBook(id: number) {
+  async viewBook() {
     const pool = (await poolPromise) as ConnectionPool;
-    const result = await pool
-      .request()
-      .input("id", sql.Int, id)
-      .query(`SELECT * FROM book_tbl WHERE id = @id`);
+    const result = await pool.request().query(`SELECT * FROM book_tbl`);
+    console.log(result);
 
     return result.recordset;
   }
@@ -26,23 +24,23 @@ class studentRepo {
     const pool = (await poolPromise) as ConnectionPool;
     const result = await pool
       .request()
-      .input("studentId", sql.Int, studentId)
-      .input("bookId", sql.Int, bookId).query(`
+      .input("student_id", sql.Int, studentId)
+      .input("book_id", sql.Int, bookId).query(`
         INSERT INTO borrowed_books_tbl (student_id, book_id, borrow_date)
-        VALUES (@studentId, @bookId, GETDATE());
+        VALUES (@student_id, @book_id, GETDATE());
       `);
 
     return result;
   }
 
-  async returnBook(studentId: number, bookId: number) {
+  async returnBook(student_id: number, book_id: number) {
     const pool = (await poolPromise) as ConnectionPool;
     const result = await pool
       .request()
-      .input("studentId", sql.Int, studentId)
-      .input("bookId", sql.Int, bookId).query(`
+      .input("student_id", sql.Int, student_id)
+      .input("book_id", sql.Int, book_id).query(`
         DELETE FROM borrowed_books_tbl
-        WHERE student_id = @studentId AND book_id = @bookId;
+        WHERE student_id = @student_id AND book_id = @book_id;
       `);
 
     return result;

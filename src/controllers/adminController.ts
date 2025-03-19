@@ -54,12 +54,10 @@ class AdminController {
 
       const book = await adminService.deleteBook(+id);
 
-      if (book) {
-        res.status(200).json({
-          message: "Deleteed Successfully",
-        });
-        return;
-      }
+      res.status(200).json({
+        message: "Deleteed Successfully",
+      });
+      return;
     } catch (err) {
       res.status(404).json({
         message: "error",

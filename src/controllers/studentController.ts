@@ -20,8 +20,10 @@ class StudentController {
   }
   async viewBook(req: Request, res: Response) {
     try {
-      const id = req.params.id;
-      const book = await studentService.viewBook(+id);
+      const book = await studentService.viewBook();
+      console.log("...........");
+
+      console.log(book);
 
       res.status(200).json({
         message: "success",
@@ -36,8 +38,8 @@ class StudentController {
   }
   async borrowBook(req: Request, res: Response) {
     try {
-      const { studentId, bookId } = req.body;
-      const book = await studentService.borrowBook(+studentId, +bookId);
+      const { student_id, book_id } = req.body;
+      const book = await studentService.borrowBook(+student_id, +book_id);
 
       res.status(200).json({
         message: "success",
@@ -53,8 +55,8 @@ class StudentController {
 
   async returnBook(req: Request, res: Response) {
     try {
-      const { studentId, bookId } = req.body;
-      const book = await studentService.returnBook(+studentId, +bookId);
+      const { student_id, book_id } = req.body;
+      const book = await studentService.returnBook(+student_id, +book_id);
 
       res.status(200).json({
         message: "success",
